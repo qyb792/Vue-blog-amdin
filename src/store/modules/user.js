@@ -1,4 +1,4 @@
-import { getUsername, setUsername, removeUsername } from '@/utils/auth'
+import { getUsername, setUsername, removeUsername, setTimeStamp } from '@/utils/auth'
 import { login, getUserInfo } from '@/api/user'
 const state = {
   username: getUsername(),
@@ -51,7 +51,7 @@ const actions = {
     context.commit('setUsername', user.username) // 设置username
     context.commit('setUserRoles', user.authorities[0].authority) // 保存用户角色数组
 
-    // setTimeStamp() // 设置当前的时间戳
+    setTimeStamp() // 设置当前的时间戳
   },
 
   // 获取用户资料的actions
