@@ -1,13 +1,18 @@
 <template>
-  <div class="sidebar-logo-container" :class="{'collapse':collapse}">
+  <div class="sidebar-logo-container" :class="{ collapse: collapse }">
     <transition name="sidebarLogoFade">
-      <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
+      <router-link
+        v-if="collapse"
+        key="collapse"
+        class="sidebar-logo-link"
+        to="/"
+      >
         <img v-if="logo" :src="logo" class="sidebar-logo">
-        <h1 v-else class="sidebar-title">{{ title }} </h1>
+        <h1 v-else class="sidebar-title">{{ title }}</h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
         <img v-if="logo" :src="logo" class="sidebar-logo">
-        <h1 class="sidebar-title">{{ title }} </h1>
+        <h1 class="sidebar-title">{{ title }}</h1>
       </router-link>
     </transition>
   </div>
@@ -24,8 +29,9 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Admin Template',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '邱同学的小破站',
+      logo:
+        'https://cdn.jsdelivr.net/gh/zytqyb/Image-hosting@master/hexo_blog_img/logo.4nmvhqi65e20.png'
     }
   }
 }
@@ -46,7 +52,8 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
+  color: rgb(33, 37, 41);
+  border-bottom: 1px solid #4f5962;
   text-align: center;
   overflow: hidden;
 
@@ -59,12 +66,17 @@ export default {
       height: 32px;
       vertical-align: middle;
       margin-right: 12px;
+      box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+      border-radius: 50%;
+      opacity: 0.8;
+      margin-left: 13px;
+      margin-right: 8px;
     }
 
     & .sidebar-title {
       display: inline-block;
-      margin: 0;
-      color: #fff;
+      margin: 0 10px 0;
+      color: #000;
       font-weight: 600;
       line-height: 50px;
       font-size: 14px;
@@ -75,8 +87,17 @@ export default {
 
   &.collapse {
     .sidebar-logo {
-      margin-right: 0px;
+      margin-right: 20px;
+      width: 32px;
+      height: 32px;
     }
   }
+  // 小图样式
+  .sidebar-logo {
+    width: 140px;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+  // 大图样式
 }
 </style>

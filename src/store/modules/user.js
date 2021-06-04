@@ -1,5 +1,5 @@
 import { getUsername, setUsername, removeUsername } from '@/utils/auth'
-import { login } from '@/api/user'
+import { login, getUserInfo } from '@/api/user'
 const state = {
   username: getUsername(),
   userInfo: {}, // 用户信息列表
@@ -48,7 +48,7 @@ const actions = {
     console.log(user)
     // this.$store.dispatch('user/getRoles', res.user.authorities[0].authority)
     context.commit('setUserInfo', user.user) // 提交到mutations
-    context.commit('setUsername', user.username) // 设置token
+    context.commit('setUsername', user.username) // 设置username
     context.commit('setUserRoles', user.authorities[0].authority) // 保存用户角色数组
 
     // setTimeStamp() // 设置当前的时间戳
@@ -56,10 +56,13 @@ const actions = {
 
   // 获取用户资料的actions
   async getUserInfo(context) {
+    const result = await getUserInfo()
+    // console.log(result)
     // 获取用户的详情
-    context.commit('setUserInfo')
+    context.commit('setUserInfo', result.data)
     // context.commit('setUserInfo', { ...result, ...baseInfo }) // 提交到mutations
     // return result // 这里为什么要return 这里是给我们后期做权限的时候 留下的伏笔
+    return result // 这里为什么要return 这里是给我们后期做权限的时候 留下的伏笔
   },
 
   async logout(context) {

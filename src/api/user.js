@@ -9,6 +9,14 @@ export function login(data) {
   })
 }
 
+export function getUserInfo() {
+  // 返回一个axios对象 => promise
+  return request({
+    url: '/blogInfo/getBlogInfo',
+    method: 'get'
+  })
+}
+
 export function logout() {
 
 }
