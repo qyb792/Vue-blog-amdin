@@ -6,7 +6,8 @@ export default {
   component: Layout,
   name: 'user',
   meta: {
-    title: '用户管理'
+    title: '用户管理',
+    icon: 'el-icon-user-solid'
   },
   children: [
     {
@@ -14,7 +15,8 @@ export default {
       component: () => import('@/views/user/UserList'),
       name: 'userlist',
       meta: {
-        title: '用户列表'
+        title: '用户列表',
+        icon: 'el-icon-user'
       }
     },
     {
@@ -22,7 +24,8 @@ export default {
       component: () => import('@/views/user/UserLoginInfo'),
       name: 'userlogininfo',
       meta: {
-        title: '登录信息'
+        title: '登录信息',
+        icon: 'el-icon-location'
       }
     }
   ]

@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import user from './modules/user'
+import message from './modules/message'
+import setting from './modules/setting'
+import article from './modules/article'
+import friendother from './modules/friendother'
 
 Vue.use(Router)
 
@@ -8,7 +12,11 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 export const asyncRoutes = [
-  user
+  user,
+  article,
+  message,
+  friendother,
+  setting
 ]
 export const constantRoutes = [
   {
@@ -31,7 +39,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 

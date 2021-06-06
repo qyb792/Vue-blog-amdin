@@ -203,9 +203,8 @@ $light_gray: #fff;
 .login-container {
   min-height: 100%;
   width: 100%;
-  // background-image: url(https://blog.bsat1314.cn/blog_img/20210603183142.jpg);
-  background-image: url(https://cdn.jsdelivr.net/gh/zytqyb/Image-hosting@master/hexo_blog_img/login.jpg);
-  background-size: 100% 100%;
+  background: url(https://cdn.jsdelivr.net/gh/zytqyb/Image-hosting@master/hexo_blog_img/login.jpg) no-repeat;
+  background-size: cover;
   background-position: center center;
   overflow: auto;
 
