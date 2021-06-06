@@ -1,8 +1,6 @@
 <template>
-  <div class="dashboard-container">
-    <div class="app-container">
-      
-    </div>
+  <div class="login-container">
+    博客设置
   </div>
 </template>
 

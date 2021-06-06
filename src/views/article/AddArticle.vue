@@ -1,8 +1,6 @@
 <template>
-  <div class="dashboard-container">
-    <div class="app-container">
-      
-    </div>
+  <div class="login-container">
+    新增文章
   </div>
 </template>
 

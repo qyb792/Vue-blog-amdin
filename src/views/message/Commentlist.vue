@@ -1,8 +1,6 @@
 <template>
-  <div class="dashboard-container">
-    <div class="app-container">
-      
-    </div>
+  <div class="login-container">
+    评论列表
   </div>
 </template>
 

@@ -42,6 +42,10 @@ Object.keys(directives).forEach(key => {
   Vue.directive(key, directives[key])
 })
 
+// 引入自定义组件中的自定义从插件
+import Component from '@/components'
+Vue.use(Component) // 注册自己的插件
+
 Vue.config.productionTip = false
 
 new Vue({
