@@ -1,12 +1,9 @@
 <template>
-  <el-card class="page-tools">
+  <el-form :inline="true" class="demo-form-inline">
     <el-row type="flex" justify="center" align="middle">
       <el-col>
-        <div v-if="showBefore" class="before">
-          <i class="el-icon-info" />
-          <!-- 定义前面得插槽 -->
-          <slot name="before" />
-        </div>
+        <!-- 定义前面得插槽 -->
+        <slot name="before" />
       </el-col>
       <el-col>
         <el-row type="flex" justify="end">
@@ -15,7 +12,7 @@
         </el-row>
       </el-col>
     </el-row>
-  </el-card>
+  </el-form>
 </template>
 
 <script>
