@@ -213,10 +213,10 @@
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>
+            <el-button @click="isAddDialog = false">取 消</el-button>
             <el-button
               type="primary"
-              @click="addUser"
+              @click="isAddDialog = false"
             >确 定</el-button>
           </div>
         </el-dialog>
@@ -286,7 +286,7 @@ export default {
         createTime: this.nowTime
       },
       // 添加用户弹出层
-      isAddDialog: true
+      isAddDialog: false
     }
   },
   created() {
