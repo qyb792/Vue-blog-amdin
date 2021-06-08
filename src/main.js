@@ -16,7 +16,7 @@ import '@/icons' // icon
 import '@/permission' // permission control
 
 import * as directives from '@/directives'
-
+import 'default-passive-events'
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -30,10 +30,17 @@ if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
+import i18n from '@/lang'
+
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
-Vue.use(ElementUI)
+// Vue.use(ElementUI)
+
+// 设置element为当前的语言
+Vue.use(ElementUI, {
+  i18n: (key, value) => i18n.t(key, value)
+})
 
 // 注册自定义指令
 // 遍历所有的导出的指令对象 完成自定义全局注册
@@ -58,5 +65,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   render: h => h(App)
 })

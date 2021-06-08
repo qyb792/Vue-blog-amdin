@@ -30,12 +30,12 @@ export default {
       }
     },
     {
-      path: '/article/*',
+      path: '/editarticle/*',
       component: () => import('@/views/article/AddArticle'),
-      name: 'article',
+      name: 'editarticle',
       hidden: true,
       meta: {
-        title: '新增文章',
+        title: '修改文章',
         icon: 'el-icon-folder-add'
       }
     },
