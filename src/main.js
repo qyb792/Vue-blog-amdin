@@ -46,6 +46,12 @@ Object.keys(directives).forEach(key => {
 import Component from '@/components'
 Vue.use(Component) // 注册自己的插件
 
+// md编辑器
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
+
 Vue.config.productionTip = false
 
 new Vue({

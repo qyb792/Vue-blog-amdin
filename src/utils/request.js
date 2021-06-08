@@ -36,6 +36,7 @@ service.interceptors.response.use(response => {
   const { success, message, data } = response.data
   //   要根据success的成功与否决定下面的操作
   if (success) {
+    data.success = success
     return data
   } else {
     // 业务已经错误了 还能进then ? 不能 ！ 应该进catch

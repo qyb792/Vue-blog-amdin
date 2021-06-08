@@ -22,7 +22,7 @@
       :percentage="percent"
     />
     <el-dialog :visible.sync="showDialog" title="图片预览">
-      <img :src="imgUrl" alt="" style="width: 100%">
+      <img :src="imgUrl" alt="" style="width: 100%" height="500px">
     </el-dialog>
   </div>
 </template>
@@ -148,5 +148,10 @@ export default {
 <style>
 .disabled .el-upload--picture-card {
   display: none;
+}
+
+/* 解决预览图片莫名其妙有黑色的背景颜色的问题 */
+.v-modal {
+  background: transparent;
 }
 </style>

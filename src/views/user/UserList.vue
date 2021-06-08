@@ -32,11 +32,11 @@
               </el-select>
             </el-form-item>
             <el-form-item
-              v-model="UserQueryVO.nickName"
+
               label="昵称"
               size="medium"
             >
-              <el-input placeholder="请输入内容" />
+              <el-input v-model="UserQueryVO.nickname" placeholder="请输入内容" />
             </el-form-item>
           </template>
           <template v-slot:after>
@@ -72,7 +72,10 @@
             width="100"
           >
             <template slot-scope="scope">
-              <el-avatar :src="scope.row.avatar" />
+              <el-avatar
+                :src="scope.row.avatar"
+                @click.native="showQrCode(scope.row.avatar)"
+              />
             </template>
           </el-table-column>
           <el-table-column
@@ -222,19 +225,28 @@
         </el-dialog>
       </el-card>
     </div>
+    <el-dialog
+      title="二维码"
+      :visible.sync="showCodeDialog"
+      @close="imgUrl = ''"
+    >
+      <el-row type="flex" justify="center">
+        <canvas ref="myCanvas" />
+      </el-row>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 import { getUserList } from '@/api/user'
-
+import QrCode from 'qrcode'
 export default {
   data() {
     return {
       // 查询用户的信息
       UserQueryVO: {
         roleName: '', // 用户角色
-        nickName: '' // 昵称
+        nickname: '' // 昵称
       },
       nowTime: '', // 现在的时间
       userAuthList: [
@@ -286,7 +298,9 @@ export default {
         createTime: this.nowTime
       },
       // 添加用户弹出层
-      isAddDialog: false
+      isAddDialog: false,
+      // 控制头像二维码的弹出
+      showCodeDialog: false
     }
   },
   created() {
@@ -302,7 +316,6 @@ export default {
       // }
       // const { data } = await addUser(this.addUserForm)
       // console.log(data)
-
     },
 
     // 当每页条数改变的时候
@@ -333,6 +346,20 @@ export default {
     reset() {
       this.UserQueryVO.nickname = ''
       this.UserQueryVO.userAuth = ''
+    },
+    showQrCode(url) {
+      // url存在的情况下 才弹出层
+      if (url) {
+        this.showCodeDialog = true
+        // 将地址转换成二维码
+        // 有一个方法可以等到上一次的数据更新完毕,页面渲染完毕后调用
+        this.$nextTick(() => {
+          QrCode.toCanvas(this.$refs.myCanvas, url)
+          // 如果转换的二维码后面数据是一个地址则跳转到该地址 不是地址则会显示内容
+        })
+      } else {
+        this.$message.warning('该用户未上传头像')
+      }
     }
   }
 }

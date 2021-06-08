@@ -30,9 +30,19 @@ export default {
       }
     },
     {
-      path: '/labelmanagement',
-      component: () => import('@/views/article/LabelManagement'),
-      name: 'LabelManagement',
+      path: '/article/*',
+      component: () => import('@/views/article/AddArticle'),
+      name: 'article',
+      hidden: true,
+      meta: {
+        title: '新增文章',
+        icon: 'el-icon-folder-add'
+      }
+    },
+    {
+      path: '/tagManagement',
+      component: () => import('@/views/article/TagManagement'),
+      name: 'tagManagement',
       meta: {
         title: '标签管理',
         icon: 'el-icon-collection-tag'
@@ -43,7 +53,7 @@ export default {
       component: () => import('@/views/article/Classification'),
       name: 'Classification',
       meta: {
-        title: '标签管理',
+        title: '分类管理',
         icon: 'el-icon-menu'
       }
     }
