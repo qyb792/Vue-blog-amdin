@@ -9,6 +9,9 @@ const whiteList = ['/login', '/404'] // 定义白名单  所有不受权限控�
 router.beforeEach(async(to, from, next) => {
   NProgress.start() // 开启进度条
   //  首先判断有无token
+  if (to.meta.title) {
+    document.title = '后台管理 - ' + to.meta.title
+  }
   if (store.getters.username) {
     //   如果有token 继续判断是不是去登录页
     if (to.path === '/login') {

@@ -1,12 +1,18 @@
 <template>
-  <div class="login-container">
-    接口文档
-  </div>
+  <el-card class="main-card">
+    <iframe
+      X-Frame-Options
+      src="/api/swagger-ui.html"
+      class="iframe"
+    />
+  </el-card>
 </template>
 
-<script>
-export default {}
-</script>
-
-<style>
+<style scoped>
+  .iframe {
+    height: calc(100vh - 170px);
+    width: 100%;
+    border: none;
+    /* scrolling: yes; */
+  }
 </style>
