@@ -178,7 +178,7 @@ export default {
         console.log(res)
         this.articleList = res.data
         this.total = res.total
-        this.$message.success('查询文章列表成功')
+        // this.$message.success('查询文章列表成功')
         // console.log(res)
       })
     },

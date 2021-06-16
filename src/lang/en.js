@@ -13,7 +13,8 @@ export default {
     commentlist: 'Commentlist',
     interfacesdocs: 'Interfacesdocs',
     ariendlinks: 'Ariendlinks',
-    aboutMe: 'AboutMe'
+    aboutMe: 'AboutMe',
+    editarticle: 'editarticle'
   },
   navbar: {
     search: 'search',

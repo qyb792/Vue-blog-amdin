@@ -26,7 +26,8 @@ export default {
     import: '导入',
     // 注册
     register: '注册',
-    login: '登录'
+    login: '登录',
+    editarticle: '修改文章'
   },
   navbar: {
     search: '站内搜索',
