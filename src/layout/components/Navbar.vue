@@ -27,7 +27,7 @@
           <router-link to="/">
             <el-dropdown-item> 首页 </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/zytqyb/hrsass">
+          <a target="_blank" href="https://github.com/zytqyb/Vue-blog-amdin">
             <el-dropdown-item>项目地址</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
