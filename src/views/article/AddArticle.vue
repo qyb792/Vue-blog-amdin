@@ -220,6 +220,7 @@ export default {
           title: '成功',
           message: '发布成功'
         })
+        this.$router.push('/articlelist')
       } else {
         this.$notify.error({
           title: '失败',

@@ -9,7 +9,7 @@
       label-position="left"
     >
       <div class="title-container">
-        <a href="#">
+        <a href="www.bsat1314.cn">
           <h3 class="title">海上月是天上月，眼前人是心上人</h3>
         </a>
       </div>
@@ -85,8 +85,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '000000'
+        username: '',
+        password: ''
       },
       // 表单验证
       loginRules: {
